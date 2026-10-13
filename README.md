@@ -1,6 +1,23 @@
 # Watch eSIM Helper
 
-A separate Android app that scans an eSIM QR code (or accepts pasted text), validates it, and opens the **original Google Pixel Watch app** at its hidden `esim_download` destination. It does not replace or patch the companion app. Android 11 or later is required.
+## Overview
+A standalone Android app that writes an eSIM (QR code or pasted text) to the pixel watch linked to the phone. You need to have **original Google Pixel Watch app** installed and your watch linked to your phone. This app does not replace or patch the original Google Pixel Watch app. 
+
+## How is this app made?
+This app is written entirely (100%) by Codex and I have not reviewed its code. Codex found the hidden configuration page in the original Google Pixel Watch app, likely reserved for Google Fi app, using https://github.com/morluto/rea. Fortunately, this path does not require any authentication as of now. Here's hoping Google doesn't change it!
+
+## Testing
+I manually tested it on a US-version Pixel Watch 2 LTE. It successfully writes all esims I gave it onto the watch. 
+Due to the region I am in (China) and the restrictive carrier policy there I wasn't able to get internet to work on the watch. But at least the watch is able to connect to the carrier (China Telecom) before being suspended by carrier. 
+Codex did not test it on an actual watch.
+
+## Pitfalls
+This is more of pitfalls from the Pixel Watch itself/carriers than this app. 
+Pixel watches have restrictive roaming policies baked into its firmware; reverse engineering shows the esim home carrier's MCC & the current location MCC is divided into two buckets, US vs non-US, and if the buckets differ a limit will be applied to the connection. 
+For anyone trying to use this app: your esim is not guaranteed to work, expect restrictions from cross-region roaming, your esim's home carrier and your local carrier. 
+
+
+All contents below in this README are written by codex. 
 
 ## Install and use
 
