@@ -1,0 +1,48 @@
+plugins { id 'com.android.application' }
+
+android {
+    namespace 'io.github.watchesim.helper'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'io.github.watchesim.helper'
+        minSdk 30
+        targetSdk 35
+        versionCode 1
+        versionName '0.1.0'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    testOptions { unitTests.includeAndroidResources = true }
+    signingConfigs {
+        debug {
+            storeFile rootProject.file('.local/helper-debug.keystore')
+        }
+    }
+}
+
+dependencies {
+    implementation platform('org.jetbrains.kotlin:kotlin-bom:1.8.22')
+    implementation 'com.journeyapps:zxing-android-embedded:4.3.0'
+    implementation 'com.google.zxing:core:3.5.3'
+    implementation 'androidx.core:core:1.13.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.robolectric:robolectric:4.14.1'
+}
+
+// Keep development signing material inside this project, out of the user's home.
+def debugKey = rootProject.file('.local/helper-debug.keystore')
+tasks.register('ensureDebugKeystore', Exec) {
+    onlyIf { !debugKey.exists() }
+    doFirst { debugKey.parentFile.mkdirs() }
+    commandLine "${System.getProperty('java.home')}/bin/keytool",
+            '-genkeypair', '-keystore', debugKey.absolutePath,
+            '-storetype', 'JKS', '-storepass', 'android', '-keypass', 'android',
+            '-alias', 'androiddebugkey', '-keyalg', 'RSA', '-keysize', '2048',
+            '-validity', '10000', '-dname', 'CN=Android Debug,O=Android,C=US'
+}
+tasks.configureEach {
+    if (name == 'validateSigningDebug') dependsOn 'ensureDebugKeystore'
+}

@@ -1,0 +1,29 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root" android:layout_width="match_parent" android:layout_height="match_parent"
+    android:fillViewport="true">
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="vertical" android:padding="24dp">
+        <TextView style="@style/Body" android:text="@string/eyebrow" android:textColor="#176B52" android:textStyle="bold" android:textSize="13sp" android:letterSpacing="0.12" />
+        <TextView style="@style/Body" android:text="@string/title" android:textColor="#182B22" android:textSize="34sp" android:textStyle="bold" android:layout_marginTop="14dp" />
+        <TextView style="@style/Body" android:text="@string/intro" android:layout_marginTop="16dp" android:layout_marginBottom="24dp" />
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:background="@drawable/card">
+            <Button android:id="@+id/scan" style="@style/ActionButton" android:text="@string/scan" android:backgroundTint="#176B52" android:textColor="#FFFFFF" />
+            <EditText android:id="@+id/code" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="72dp" android:layout_marginTop="16dp" android:hint="@string/manual_hint"
+                android:inputType="textVisiblePassword|textNoSuggestions|textMultiLine" android:maxLines="4" android:autofillHints="" android:importantForAutofill="noExcludeDescendants" android:saveEnabled="false" android:textSize="16sp" />
+            <Button android:id="@+id/review" style="@style/ActionButton" android:text="@string/review" />
+        </LinearLayout>
+        <LinearLayout android:id="@+id/review_card" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="20dp" android:orientation="vertical" android:background="@drawable/card" android:visibility="gone">
+            <TextView style="@style/Body" android:text="@string/ready" android:textStyle="bold" android:textColor="#182B22" android:textSize="22sp" />
+            <TextView style="@style/Body" android:text="@string/server_label" android:textSize="13sp" android:layout_marginTop="16dp" />
+            <TextView android:id="@+id/server" style="@style/Body" android:textColor="#176B52" android:textStyle="bold" android:saveEnabled="false" />
+            <TextView style="@style/Body" android:text="@string/before_continue" android:layout_marginTop="16dp" />
+            <CheckBox android:id="@+id/confirm" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="64dp" android:text="@string/confirm" android:saveEnabled="false" android:textColor="#182B22" android:layout_marginTop="12dp" />
+            <Button android:id="@+id/continue_button" style="@style/ActionButton" android:text="@string/continue_action" android:enabled="false" android:backgroundTint="#176B52" android:textColor="#FFFFFF" />
+            <Button android:id="@+id/clear" style="@style/ActionButton" android:text="@string/clear" />
+        </LinearLayout>
+        <TextView android:id="@+id/status" style="@style/Body" android:accessibilityLiveRegion="polite" android:layout_marginTop="16dp" android:saveEnabled="false" />
+        <TextView style="@style/Body" android:text="@string/privacy" android:textSize="13sp" android:layout_marginTop="8dp" />
+        <TextView style="@style/Body" android:text="@string/compatibility" android:textStyle="bold" android:textSize="14sp" android:layout_marginTop="24dp" />
+        <TextView style="@style/Body" android:text="@string/compatibility_body" android:textSize="13sp" android:layout_marginTop="6dp" />
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Watch eSIM Helper</string>
+    <string name="eyebrow">WATCH • eSIM</string>
+    <string name="title">A new connection\nfor your watch.</string>
+    <string name="intro">Scan a separate watch plan’s QR code, then continue in the Google Pixel Watch app.</string>
+    <string name="scan">Scan QR code</string>
+    <string name="scan_prompt">Scan your watch plan’s eSIM QR code</string>
+    <string name="manual_hint">Or paste the activation code</string>
+    <string name="review">Review code</string>
+    <string name="privacy">Codes stay on this device until you choose to send one to the Pixel Watch app. This helper has no access to your phone’s SIMs.</string>
+    <string name="compatibility">Experimental handoff</string>
+    <string name="compatibility_body">Built for Pixel Watch app 5.0.0.958206140. Its hidden download screen has not been tested on a real watch. You may see Google Fi wording. The helper cannot verify which watch is selected or whether installation succeeds.</string>
+    <string name="ready">Ready to hand off</string>
+    <string name="server_label">Activation server</string>
+    <string name="before_continue">Before continuing, open Pixel Watch and check that your intended LTE watch is selected and connected. Use a separate watch plan, not a replacement or transfer code for your phone’s line.</string>
+    <string name="confirm">I have checked the selected watch and this code is for a separate watch plan.</string>
+    <string name="continue_action">Continue in Pixel Watch</string>
+    <string name="clear">Clear code</string>
+    <string name="handoff_sent">Opened Pixel Watch. Complete setup there. This helper cannot confirm installation.</string>
+    <string name="missing_companion">Install the original Google Pixel Watch app and connect your watch before continuing.</string>
+    <string name="blocked_companion">The Pixel Watch download screen is unavailable. Keep the original app installed and check its version. No alternate installer was opened.</string>
+    <string name="confirmation_required">This profile requires a separate confirmation code. The hidden download path does not expose confirmation-code entry. Use the full supported setup flow instead.</string>
+    <string name="empty_code">Scan or paste an eSIM activation code first.</string>
+    <string name="invalid_code">This is not an activation code in the format accepted by this Pixel Watch version. Expected LPA:1$server$matching-id.</string>
+    <string name="camera_unavailable">No camera is available. You can paste an activation code instead.</string>
+    <string name="scan_failed">The scanner could not open. You can paste an activation code instead.</string>
+</resources>
