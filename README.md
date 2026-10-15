@@ -8,7 +8,7 @@ This app is written entirely (100%) by Codex and I have not reviewed its code. C
 
 ## Testing
 I manually tested it on a US-version Pixel Watch 2 LTE. It successfully writes all esims I gave it onto the watch. 
-Due to the region I am in (China) and the restrictive carrier policy there I wasn't able to get internet to work on the watch. But at least the watch is able to connect to the carrier (China Telecom) before being suspended by carrier. 
+~~Due to the region I am in (China) and the restrictive carrier policy there I wasn't able to get internet to work on the watch. But at least the watch is able to connect to the carrier (China Telecom) before being suspended by carrier.~~ Edit: Verified cellular internet is working on a supported carrier with data-only eSIM. 
 Codex did not test it on an actual watch.
 
 ## Pitfalls
